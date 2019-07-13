@@ -44,7 +44,7 @@ export class InMemoryDatabase implements InMemoryDbService {
         category: categories[3],
         paid: true,
         date: '15/10/2018',
-        amount: '4405,49',
+        amount: '4.405,49',
         type: 'revenue'
       } as Entry,
       {
@@ -114,7 +114,7 @@ export class InMemoryDatabase implements InMemoryDbService {
         category: categories[4],
         paid: true,
         date: '25/10/2018',
-        amount: '2980,00',
+        amount: '2.980,00',
         type: 'revenue'
       } as Entry,
       {
