@@ -21,4 +21,5 @@ import { InMemoryDatabase } from './in-memory-database';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
