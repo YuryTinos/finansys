@@ -52,12 +52,12 @@ export abstract class BaseResourceService<T extends BaseResourceModel> {
 
   protected jsonDataToResources(jsonData: any[]): T[] {
     const resources: T[] = [];
-    jsonData.forEach(element => resources.push(element as T));
+    jsonData.forEach(element => resources.push(Object.assign({} as T, element)));
     return resources;
   }
 
   protected jsonDataToResource(jsonData: any): T {
-    return jsonData as T;
+    return Object.assign({} as T, jsonData);
   }
 
   protected handleError(error: any): Observable<any> {
