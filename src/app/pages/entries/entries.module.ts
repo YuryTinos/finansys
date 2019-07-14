@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
-import { IMaskModule } from 'angular-imask';
 
+import { IMaskModule } from 'angular-imask';
 import { CalendarModule } from 'primeng/primeng';
 
 import { SharedModule } from '../../shared/shared.module';
