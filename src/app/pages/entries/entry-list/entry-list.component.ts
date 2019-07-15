@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import { BaseResourceListComponent } from '../../../shared/components/base-resource-list/base-resource-list.component';
 
 import {EntryService} from '../shared/entry.service';
 import {Entry} from '../shared/entry.model';
@@ -8,31 +9,8 @@ import {Entry} from '../shared/entry.model';
   templateUrl: './entry-list.component.html',
   styleUrls: ['./entry-list.component.css']
 })
-export class EntryListComponent implements OnInit {
-
-  entries: Entry[] = [];
-
+export class EntryListComponent extends BaseResourceListComponent<Entry> {
   constructor(private entryService: EntryService) {
+    super(entryService);
   }
-
-  ngOnInit() {
-    this.entryService.getAll().subscribe(
-      entries => this.entries = entries.sort((a, b) => b.id - a.id),
-      error => alert('Erro ao carregar Lista')
-    );
-  }
-
-  deleteEntry(entry) {
-
-    const mustDelete = confirm('Deseja realmente deletar este item?');
-
-    if (mustDelete) {
-      this.entryService.delete(entry.id).subscribe(
-        () => this.entries = this.entries
-          .filter(c => c.id !== entry.id),
-        error => alert('Erro ao tentar Excluir')
-      );
-    }
-  }
-
 }
